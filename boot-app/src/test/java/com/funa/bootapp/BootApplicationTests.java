@@ -1,10 +1,10 @@
-package com.funa.springmonorepostarterkit;
+package com.funa.bootapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringMonorepoStarterKitApplicationTests {
+class BootApplicationTests {
 
     @Test
     void contextLoads() {
