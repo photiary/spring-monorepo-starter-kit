@@ -4,6 +4,7 @@ springDependencyManagement = "1.1.7"
 hibernateOrm = "6.6.18.Final"
 graalvmNative = "0.10.6"
 springAi = "1.0.0"
+lombok = "1.18.32"
 postgresql = "42.7.2"
 
 [libraries]
@@ -16,8 +17,11 @@ spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-star
 spring-batch-test = { module = "org.springframework.batch:spring-batch-test" }
 spring-ai-starter-model-ollama = { module = "org.springframework.ai:spring-ai-starter-model-ollama" }
 spring-ai-spring-boot-docker-compose = { module = "org.springframework.ai:spring-ai-spring-boot-docker-compose" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
 postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
+h2database = { module = 'com.h2database:h2' }
+
 
 [plugins]
 spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
