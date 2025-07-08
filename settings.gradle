@@ -1,0 +1,14 @@
+rootProject.name = 'spring-monorepo-starter-kit'
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        libs {
+            from(files("gradle/versions/libs.versions.toml"))
+        }
+    }
+}
+
+include 'common'
+include 'boot-app'
+include 'batch-app'
+include 'ai-app'
