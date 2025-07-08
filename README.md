@@ -1,0 +1,1 @@
+# spring-monorepo-starter-kit
