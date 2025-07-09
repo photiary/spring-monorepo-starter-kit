@@ -24,7 +24,7 @@ This file contains guidelines for Junie to follow when working on this Spring Bo
 
 - Ignore the `.prompt.md` resources defined in `./prompt.ignore`.
 
-## Project Structure
+## Root Project Structure
 
 - **Monorepo structure**
 
@@ -34,6 +34,11 @@ root/
 ├── settings.gradle
 ├── gradle/                 # Common gradle setting, Ex: Version management, Plugin setting.
 ├── common/                 # Common library and util module
+│   ├── com.funa.common.exception
+│   │   ├── GlobalExceptionHandler.java
+│   │   ├── ValidException.java
+│   │   ├── DuplicationException.java
+│   │   └── NotFoundException.java
 │   └── build.gradle
 ├── boot-app/               # Spring Boot REST API Service module
 │   └── build.gradle
@@ -43,6 +48,10 @@ root/
 │   └── build.gradle
 └── prompts/                # Prompt for AI Agent
 ```
+
+## Java Language Features
+
+- **Data Carriers:** Use **Lombok** for immutable data transfer objects (DTOs). value objects (VOs).
 
 ## Controller
 
@@ -58,3 +67,14 @@ root/
     - createdAt
     - updatedId
     - updatedAt
+
+## Logs
+
+- **Log content:** timestamp, log level, transaction ID(Trace ID), user ID
+
+## Junie Guidelines Prompt files for App Project
+
+Each **Sub-Module** should always follow the following pattern::
+
+- **boot-app**: `./guideline-boot-app.prompt.md`
+- **batch-app**: `./guideline-batch-app.prompt.md`
