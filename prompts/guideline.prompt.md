@@ -26,6 +26,7 @@ This file contains guidelines for Junie to follow when working on this Spring Bo
 
 ## Root Project Structure
 
+- **MSA Architecture**
 - **Monorepo structure**
 
 ```
