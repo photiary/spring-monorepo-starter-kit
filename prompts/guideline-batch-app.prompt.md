@@ -27,8 +27,6 @@ This file contains guidelines for Junie to follow when working on this Spring Ba
           │       ├── batch
           │       │   └── {Feature}
           │       │       ├── {Feature}JobConfig.java
-          │       │       ├── {Feature}JobController.java
-          │       │       ├── {Feature}JobService.java
           │       │       ├── {Feature}Step.java
           │       │       ├── {Feature}Tasklet.java
           │       │       ├── {Feature}Reader.java

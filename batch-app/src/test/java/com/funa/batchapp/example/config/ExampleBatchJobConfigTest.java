@@ -1,9 +1,9 @@
 package com.funa.batchapp.example.config;
 
-import com.funa.batchapp.example.entity.ExampleProcessedData;
-import com.funa.batchapp.example.entity.ExampleRawData;
-import com.funa.batchapp.example.repository.ExampleProcessedDataRepository;
-import com.funa.batchapp.example.repository.ExampleRawDataRepository;
+import com.funa.batchapp.example.ExampleProcessedData;
+import com.funa.batchapp.example.ExampleRawData;
+import com.funa.batchapp.example.ExampleProcessedDataRepository;
+import com.funa.batchapp.example.ExampleRawDataRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.batch.core.Job;

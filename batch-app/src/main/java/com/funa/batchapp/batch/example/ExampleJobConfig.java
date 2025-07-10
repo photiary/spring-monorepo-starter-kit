@@ -1,7 +1,7 @@
 package com.funa.batchapp.batch.example;
 
-import com.funa.batchapp.example.entity.ExampleProcessedData;
-import com.funa.batchapp.example.entity.ExampleRawData;
+import com.funa.batchapp.example.ExampleProcessedData;
+import com.funa.batchapp.example.ExampleRawData;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.Job;
@@ -18,26 +18,24 @@ import org.springframework.transaction.PlatformTransactionManager;
 @RequiredArgsConstructor
 public class ExampleJobConfig {
 
-    private final JobRepository jobRepository;
-    private final PlatformTransactionManager transactionManager;
-    private final ExampleReader exampleReader;
-    private final ExampleProcessor exampleProcessor;
-    private final ExampleWriter exampleWriter;
+  private final JobRepository jobRepository;
+  private final PlatformTransactionManager transactionManager;
+  private final ExampleReader exampleReader;
+  private final ExampleProcessor exampleProcessor;
+  private final ExampleWriter exampleWriter;
 
-    @Bean
-    public Job exampleJob() {
-        return new JobBuilder("exampleJob", jobRepository)
-                .start(exampleStep())
-                .build();
-    }
+  @Bean
+  public Job exampleJob() {
+    return new JobBuilder("exampleJob", jobRepository).start(exampleStep()).build();
+  }
 
-    @Bean
-    public Step exampleStep() {
-        return new StepBuilder("exampleStep", jobRepository)
-                .<ExampleRawData, ExampleProcessedData>chunk(10, transactionManager)
-                .reader(exampleReader.reader())
-                .processor(exampleProcessor)
-                .writer(exampleWriter)
-                .build();
-    }
+  @Bean
+  public Step exampleStep() {
+    return new StepBuilder("exampleStep", jobRepository)
+        .<ExampleRawData, ExampleProcessedData>chunk(10, transactionManager)
+        .reader(exampleReader.reader())
+        .processor(exampleProcessor)
+        .writer(exampleWriter)
+        .build();
+  }
 }

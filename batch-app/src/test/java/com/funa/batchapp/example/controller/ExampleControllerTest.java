@@ -1,7 +1,7 @@
 package com.funa.batchapp.example.controller;
 
 import com.funa.batchapp.batch.example.ExampleJobController;
-import com.funa.batchapp.batch.example.ExampleJobService;
+import com.funa.batchapp.example.ExampleService;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -25,34 +25,32 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
-class ExampleBatchControllerTest {
+class ExampleControllerTest {
 
-    @TestConfiguration
-    static class TestConfig {
-        @Bean
-        @Primary
-        public ExampleJobService mockExampleJobService() {
-            ExampleJobService mockService = Mockito.mock(ExampleJobService.class);
-            doNothing().when(mockService).runJob();
-            return mockService;
-        }
+  @TestConfiguration
+  static class TestConfig {
+    @Bean
+    @Primary
+    public ExampleService mockExampleJobService() {
+      ExampleService mockService = Mockito.mock(ExampleService.class);
+      doNothing().when(mockService).runJob();
+      return mockService;
     }
+  }
 
-    @Autowired
-    private MockMvc mockMvc;
+  @Autowired private MockMvc mockMvc;
 
-    @Autowired
-    private ExampleJobService exampleJobService;
+  @Autowired private ExampleService exampleService;
 
-    @Test
-    void testRunBatch() throws Exception {
-        // When
-        mockMvc.perform(post("/api/batch/example/run")
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().string("Example batch job has been triggered successfully"));
+  @Test
+  void testRunBatch() throws Exception {
+    // When
+    mockMvc
+        .perform(post("/api/batch/example/run").contentType(MediaType.APPLICATION_JSON))
+        .andExpect(status().isOk())
+        .andExpect(content().string("Example batch job has been triggered successfully"));
 
-        // Then
-        verify(exampleJobService, times(1)).runJob();
-    }
+    // Then
+    verify(exampleService, times(1)).runJob();
+  }
 }
