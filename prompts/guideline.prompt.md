@@ -79,3 +79,7 @@ Each **Sub-Module** should always follow the following pattern::
 
 - **boot-app**: `./guideline-boot-app.prompt.md`
 - **batch-app**: `./guideline-batch-app.prompt.md`
+
+## Unit Test
+
+- **Generate Unit Test**
