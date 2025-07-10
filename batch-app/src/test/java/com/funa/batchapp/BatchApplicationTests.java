@@ -16,9 +16,6 @@ class BatchApplicationTests {
   @Autowired private DataSource dataSource;
 
   @Test
-  void contextLoads() {}
-
-  @Test
   void verifyBatchTablesCreated() throws SQLException {
     try (Connection connection = dataSource.getConnection()) {
       DatabaseMetaData metaData = connection.getMetaData();

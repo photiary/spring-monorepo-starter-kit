@@ -4,6 +4,7 @@
 
 - Name: Example
 - API는 Trigger API만 생성, Entity는 Batch 내부에서 사용하므로 Entity에 관련한 API는 생성하지 않는다.
+- Async 로 배치 실행
 
 ## Trigger API
 
@@ -44,6 +45,7 @@ flowchart TD
 
 ### 기능
 
+- 초기 데이터 10개 저장한다.
 - 원본 데이터를 저장한다.
 
 ### Entity
