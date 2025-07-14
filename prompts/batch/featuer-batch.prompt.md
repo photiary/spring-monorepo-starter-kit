@@ -1,5 +1,7 @@
 # Prompt for Batch processor
 
+- Monorepo Project package path: `../../batch-app`
+
 # Feature
 
 - Name:
