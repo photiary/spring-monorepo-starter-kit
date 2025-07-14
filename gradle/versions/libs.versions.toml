@@ -6,6 +6,7 @@ graalvmNative = "0.10.6"
 springAi = "1.0.0"
 lombok = "1.18.38"
 postgresql = "42.7.2"
+springdocOpenapi = "2.8.0"
 
 [libraries]
 spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
@@ -21,6 +22,7 @@ lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
 postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
 h2database = { module = 'com.h2database:h2' }
+springdoc-openapi-starter-webmvc-ui = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "springdocOpenapi" }
 
 
 [plugins]

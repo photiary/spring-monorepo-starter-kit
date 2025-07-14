@@ -26,6 +26,7 @@ This file contains guidelines for Junie to follow when working on this Spring Bo
 
 ## Root Project Structure
 
+- **MSA Architecture**
 - **Monorepo structure**
 
 ```
@@ -78,3 +79,7 @@ Each **Sub-Module** should always follow the following pattern::
 
 - **boot-app**: `./guideline-boot-app.prompt.md`
 - **batch-app**: `./guideline-batch-app.prompt.md`
+
+## Unit Test
+
+- **Generate Unit Test**

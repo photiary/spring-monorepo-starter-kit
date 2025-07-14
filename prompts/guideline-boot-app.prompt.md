@@ -6,8 +6,6 @@ This file contains guidelines for Junie to follow when working on this Spring Bo
 
 ## Project Structure
 
-- **MSA Architecture**
-
 - **Domain Driven Design**
 
 - **Packaging:** Strongly prefer **package-by-feature** structure over package-by-layer.
